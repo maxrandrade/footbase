@@ -36,6 +36,7 @@ import { Pet } from './pets/pet.entity';
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       driver: ApolloDriver,
       playground: true,
+      introspection: true,
     }),
     PetsModule,
   ],
