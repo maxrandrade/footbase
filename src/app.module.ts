@@ -35,6 +35,7 @@ import { Pet } from './pets/pet.entity';
     GraphQLModule.forRoot({
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       driver: ApolloDriver,
+      playground: true,
     }),
     PetsModule,
   ],
