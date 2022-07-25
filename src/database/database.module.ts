@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Pet } from 'src/pets/pet.entity';
+import { Country } from 'src/countries/country.entity';
 
 @Module({
   imports: [
@@ -19,7 +19,7 @@ import { Pet } from 'src/pets/pet.entity';
             rejectUnauthorized: false,
           },
         },
-        entities: [Pet],
+        entities: [Country],
         synchronize: true,
       }),
       inject: [ConfigService],

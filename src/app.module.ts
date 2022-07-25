@@ -2,11 +2,9 @@ import { ApolloDriver } from '@nestjs/apollo';
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { PetsModule } from './pets/pets.module';
-import { ConfigModule, ConfigService } from '@nestjs/config';
+import { ConfigModule } from '@nestjs/config';
 import { DatabaseModule } from './database/database.module';
+import { CountriesModule } from './countries/countries.module';
 
 @Module({
   imports: [
@@ -18,9 +16,7 @@ import { DatabaseModule } from './database/database.module';
       introspection: true,
     }),
     DatabaseModule,
-    PetsModule,
+    CountriesModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
-export class AppModule { }
+export class AppModule {}

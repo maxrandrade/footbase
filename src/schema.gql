@@ -2,22 +2,20 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type Pet {
-  id: Int!
-  name: String!
-  type: String
+type Country {
+  enUS: String!
+  flag: String!
 }
 
 type Query {
-  pets: [Pet!]!
-  getPet(id: Int!): Pet!
+  getAllCountries: [Country!]!
 }
 
 type Mutation {
-  createPet(createPetInput: CreatePetInput!): Pet!
+  addCountry(addCountryInput: AddCountryInput!): Country!
 }
 
-input CreatePetInput {
-  name: String!
-  type: String
+input AddCountryInput {
+  enUS: String!
+  flag: String!
 }
