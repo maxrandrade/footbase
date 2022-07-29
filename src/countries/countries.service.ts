@@ -18,4 +18,12 @@ export class CountriesService {
     const newCountry = this.countriesRepository.create(addCountryInput);
     return this.countriesRepository.save(newCountry);
   }
+
+  async addCountries(countries: Country[]): Promise<Country[]> {
+    return this.countriesRepository.save(countries);
+  }
+
+  async deleteAll() {
+    return this.countriesRepository.delete({});
+  }
 }
