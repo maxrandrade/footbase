@@ -32,6 +32,7 @@
     "@nestjs/graphql": "^10.0.21",
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/typeorm": "^9.0.0",
+    "@vitalets/google-translate-api": "^8.0.0",
     "apollo-server-express": "^3.10.0",
     "cheerio": "^1.0.0-rc.12",
     "graphql": "^16.5.0",

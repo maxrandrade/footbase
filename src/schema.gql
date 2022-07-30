@@ -5,6 +5,7 @@
 type Country {
   enUS: String!
   flag: String!
+  ptBR: String!
 }
 
 type Query {
