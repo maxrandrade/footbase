@@ -1,12 +1,9 @@
 import { Field, ObjectType } from '@nestjs/graphql';
-import { Column, Entity, PrimaryColumn, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity } from 'typeorm';
 
 @Entity()
 @ObjectType()
 export class Country {
-  @PrimaryGeneratedColumn()
-  id: string;
-
   @Column()
   @Field()
   enUS: string;
@@ -14,8 +11,4 @@ export class Country {
   @Column()
   @Field()
   flag: string;
-
-  @Column({ nullable: true })
-  @Field({})
-  ptBR: string;
 }
