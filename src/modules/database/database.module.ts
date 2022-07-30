@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Country } from 'src/countries/country.entity';
+import { Country } from 'src/modules/countries/country.entity';
 
 @Module({
   imports: [
@@ -14,16 +14,16 @@ import { Country } from 'src/countries/country.entity';
         username: configService.get<string>('DB_USERNAME'),
         password: configService.get<string>('DB_PASSWORD'),
         database: configService.get<string>('DB_DATABASE'),
-        extra: {
-          ssl: {
-            rejectUnauthorized: false,
-          },
-        },
+        // extra: {
+        //   ssl: {
+        //     rejectUnauthorized: false,
+        //   },
+        // },
         entities: [Country],
-        synchronize: true,
+        synchronize: false
       }),
-      inject: [ConfigService],
-    }),
-  ],
+      inject: [ConfigService]
+    })
+  ]
 })
 export class DatabaseModule {}

@@ -7,7 +7,7 @@ import { AddCountryInput } from './input/add-country.input';
 @Injectable()
 export class CountriesService {
   constructor(
-    @InjectRepository(Country) private countriesRepository: Repository<Country>,
+    @InjectRepository(Country) private countriesRepository: Repository<Country>
   ) {}
 
   async findAll(): Promise<Country[]> {
@@ -26,4 +26,6 @@ export class CountriesService {
   async deleteAll() {
     return this.countriesRepository.delete({});
   }
+
+  async teste() {}
 }
