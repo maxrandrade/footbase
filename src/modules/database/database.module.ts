@@ -14,16 +14,16 @@ import { Country } from 'src/modules/countries/country.entity';
         username: configService.get<string>('DB_USERNAME'),
         password: configService.get<string>('DB_PASSWORD'),
         database: configService.get<string>('DB_DATABASE'),
-        // extra: {
-        //   ssl: {
-        //     rejectUnauthorized: false,
-        //   },
-        // },
+        extra: {
+          ssl: {
+            rejectUnauthorized: false,
+          },
+        },
         entities: [Country],
-        synchronize: false
+        synchronize: false,
       }),
-      inject: [ConfigService]
-    })
-  ]
+      inject: [ConfigService],
+    }),
+  ],
 })
 export class DatabaseModule {}
