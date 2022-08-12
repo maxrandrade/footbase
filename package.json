@@ -21,7 +21,11 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "typeorm": "node --require ts-node/register --require tsconfig-paths/register ./node_modules/typeorm/cli.js",
+    "migration:generates": "env-cmd typeorm migration:generate",
+    "migration:run": "env-cmd typeorm migration:run",
+    "migration:revert": "env-cmd typeorm migration:revert"
   },
   "dependencies": {
     "@nestjs/apollo": "^10.0.19",
@@ -31,7 +35,7 @@
     "@nestjs/core": "^9.0.0",
     "@nestjs/graphql": "^10.0.21",
     "@nestjs/platform-express": "^9.0.0",
-    "@nestjs/typeorm": "^9.0.0",
+    "@nestjs/typeorm": "8.0.2",
     "@vitalets/google-translate-api": "^8.0.0",
     "apollo-server-express": "^3.10.0",
     "cheerio": "^1.0.0-rc.12",
@@ -42,7 +46,7 @@
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
     "sqlite3": "^5.0.10",
-    "typeorm": "^0.3.7"
+    "typeorm": "^0.2.43"
   },
   "devDependencies": {
     "@nestjs/cli": "^9.0.0",

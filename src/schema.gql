@@ -4,6 +4,7 @@
 
 type Country {
   enUS: String!
+  ptBR: String!
   flag: String!
 }
 
@@ -13,9 +14,17 @@ type Query {
 
 type Mutation {
   addCountry(addCountryInput: AddCountryInput!): Country!
+  updateCountry(id: Float!, input: UpdateCountryInput!): Country!
 }
 
 input AddCountryInput {
   enUS: String!
   flag: String!
+  ptBR: String!
+}
+
+input UpdateCountryInput {
+  enUS: String!
+  flag: String!
+  ptBR: String!
 }

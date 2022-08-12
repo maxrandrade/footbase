@@ -1,13 +1,13 @@
 import { Field, InputType } from '@nestjs/graphql';
 
 @InputType()
-export class AddCountryInput {
+export class UpdateCountryInput {
   @Field()
-  enUS: string;
+  enUS?: string;
 
   @Field()
-  flag: string;
+  flag?: string;
 
   @Field()
-  ptBR: string;
+  ptBR?: string;
 }
